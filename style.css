@@ -15,7 +15,7 @@ body {
     min-height: 100vh;
     font-family: "Manrope", sans-serif;
     color: #242321;
-    background: #ebe7df;
+    background: #F1EEE8;
     line-height: 1.5;
 }
 
@@ -29,8 +29,8 @@ body {
 
 .header {
     width: 100%;
-    background: #ebe7df;
-    border-bottom: 1px solid #cbc6bd;
+     background: #F1EEE8;
+    border-bottom: 1px solid #C9C5BD;
 }
 
 .header .container {
@@ -74,7 +74,7 @@ body {
 
 .hero {
     padding: 95px 0 105px;
-    background: #e1ddd4;
+    background: #E7E3DB;
 }
 
 .hero-top {
@@ -163,7 +163,7 @@ body {
 
 .furniture {
     padding: 110px 0;
-    background: #d6d1c7;
+    background: #D8D3C9;
 }
 
 
@@ -205,9 +205,8 @@ body {
 
 
 .furniture-category {
-    background: #e0dcd4;
-
-    border: 1px solid #bcb6ab;
+     background: #E2DED6;
+    border: 1px solid #B7B1A7;
     border-radius: 10px;
 
     overflow: hidden;
@@ -320,7 +319,7 @@ body {
 
 .projects {
     padding: 130px 0 140px;
-    background: #d0cbc1;
+    background: #C9C4B9;
 }
 
 
@@ -387,7 +386,7 @@ body {
 
     object-fit: cover;
 
-    border: 1px solid #292825;
+    border: 1px solid #292824;
     border-radius: 5px;
     transition: transform 0.4s ease;
 }
@@ -420,7 +419,7 @@ body {
 
 .production {
     padding: 120px 0;
-    background: #e1ddd4;
+    background: #E7E3DB;
 }
 
 .production .section-heading {
@@ -451,8 +450,8 @@ body {
 .contacts {
     padding: 120px 0;
 
-    background: #292825;
-    color: #f4f1eb;
+     background: #292824;
+    color: #F1EEE8;
 }
 
 .contacts-content {
@@ -500,8 +499,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    color: #292825;
-    background: #f4f1eb;
+     color: #292824;
+    background: #F1EEE8;
+    border-color: #F1EEE8;
 
     border: 1px solid #f4f1eb;
     border-radius: 7px;
@@ -527,7 +527,7 @@ body {
 .footer {
     padding: 70px 0 28px;
 
-    background: #1d1c1a;
+     background: #1D1C1A;
     color: #aaa59c;
 
     border-top: 1px solid #3a3834;
