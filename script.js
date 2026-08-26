@@ -83,3 +83,71 @@ categoryBlocks.forEach(block => {
     });
 
 });
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements = document.querySelectorAll(
+    ".section-heading, .furniture-category, .project-item, .production, .contacts"
+);
+
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+
+revealElements.forEach(element => {
+
+    element.classList.add("reveal");
+
+    revealObserver.observe(element);
+
+});
+const header = document.querySelector(".header");
+const burger = document.querySelector(".burger");
+const navLinks = document.querySelectorAll(".nav a");
+
+
+burger.addEventListener("click", () => {
+
+    const isOpen = header.classList.toggle("nav-open");
+
+    burger.setAttribute(
+        "aria-label",
+        isOpen ? "Закрыть меню" : "Открыть меню"
+    );
+
+});
+
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        header.classList.remove("nav-open");
+
+        burger.setAttribute(
+            "aria-label",
+            "Открыть меню"
+        );
+
+    });
+
+});
