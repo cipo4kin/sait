@@ -149,3 +149,36 @@ navLinks.forEach(link => {
     });
 
 });
+const contactForm = document.querySelector("#contact-form");
+
+contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    const data = {
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        comment: formData.get("comment")
+    };
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            window.location.href = "thanks.html";
+        } else {
+            alert("Не удалось отправить заявку");
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("Произошла ошибка при отправке заявки");
+    }
+});
