@@ -83,9 +83,7 @@ categoryBlocks.forEach(block => {
     });
 
 });
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+
 
 const revealElements = document.querySelectorAll(
     ".section-heading, .furniture-category, .project-item, .production, .contacts"
