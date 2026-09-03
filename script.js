@@ -162,6 +162,11 @@ contactForm.addEventListener("submit", async function (event) {
         comment: formData.get("comment")
     };
 
+    const submitButton = contactForm.querySelector("button");
+
+    submitButton.textContent = "Отправляем...";
+    submitButton.disabled = true;
+
     try {
         const response = await fetch("http://127.0.0.1:8000/contact", {
             method: "POST",
@@ -174,11 +179,18 @@ contactForm.addEventListener("submit", async function (event) {
         if (response.ok) {
             window.location.href = "thanks.html";
         } else {
+            submitButton.textContent = "Рассчитать стоимость";
+            submitButton.disabled = false;
+
             alert("Не удалось отправить заявку");
         }
 
     } catch (error) {
         console.error(error);
+
+        submitButton.textContent = "Рассчитать стоимость";
+        submitButton.disabled = false;
+
         alert("Произошла ошибка при отправке заявки");
     }
 });
