@@ -1725,6 +1725,9 @@ body {
     background: #f3f0ea;
     color: #292825;
 }
+.form-field-honeypot {
+    display: none;
+}
 @media (max-width: 900px) {
 
     .contacts {
