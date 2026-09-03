@@ -149,6 +149,8 @@ navLinks.forEach(link => {
     });
 
 });
+
+
 const contactForm = document.querySelector("#contact-form");
 
 contactForm.addEventListener("submit", async function (event) {
@@ -159,7 +161,8 @@ contactForm.addEventListener("submit", async function (event) {
     const data = {
         name: formData.get("name"),
         phone: formData.get("phone"),
-        comment: formData.get("comment")
+        comment: formData.get("comment"),
+        website: formData.get("website")
     };
 
     const submitButton = contactForm.querySelector("button");
@@ -168,7 +171,7 @@ contactForm.addEventListener("submit", async function (event) {
     submitButton.disabled = true;
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/contact", {
+        const response = await fetch("https://lestim-api.onrender.com/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
