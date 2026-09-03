@@ -24,7 +24,7 @@ class ContactRequest(BaseModel):
 
 SMTP_EMAIL = os.environ["SMTP_EMAIL"]
 SMTP_PASSWORD = os.environ["SMTP_PASSWORD"]
-TARGET_EMAIL = "klodkodovic888@gmail.com"
+TARGET_EMAIL = "rkulasov749@gmail.com"
 
 
 @app.post("/contact")
