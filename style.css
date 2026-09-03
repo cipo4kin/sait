@@ -1665,6 +1665,66 @@ body {
     background: #f3f0ea;
     color: #292825;
 }
+.thanks {
+    min-height: 100vh;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    background: #292825;
+    color: #f3f0ea;
+}
+
+.thanks .container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+}
+
+.thanks-content {
+    max-width: 720px;
+}
+
+.thanks-label {
+    display: block;
+    margin-bottom: 28px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #918c84;
+}
+
+.thanks h1 {
+    max-width: 700px;
+    margin: 0;
+    font-size: clamp(52px, 7vw, 92px);
+    line-height: 0.95;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+}
+
+.thanks p {
+    max-width: 520px;
+    margin-top: 32px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #b7b2aa;
+}
+
+.thanks-button {
+    display: inline-block;
+    margin-top: 42px;
+    padding: 15px 28px;
+    border: 1px solid #f3f0ea;
+    color: #f3f0ea;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.thanks-button:hover {
+    background: #f3f0ea;
+    color: #292825;
+}
 @media (max-width: 900px) {
 
     .contacts {
@@ -1760,6 +1820,41 @@ body {
 
     .contact-form button {
         width: 100%;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .thanks {
+        padding: 32px 0;
+    }
+
+    .thanks .container {
+        width: calc(100% - 32px);
+    }
+
+    .thanks-label {
+        margin-bottom: 22px;
+        font-size: 10px;
+    }
+
+    .thanks h1 {
+        font-size: clamp(44px, 13vw, 64px);
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+    }
+
+    .thanks p {
+        margin-top: 24px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .thanks-button {
+        width: 100%;
+        margin-top: 32px;
+        padding: 16px 22px;
+        text-align: center;
     }
 
 }
