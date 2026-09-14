@@ -298,6 +298,13 @@ button {
     text-align: center;
 }
 
+.projects-heading {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
 .projects-heading .section-heading {
     max-width: 1100px;
 }
@@ -354,20 +361,12 @@ button {
 .project-info {
     max-width: 1000px;
     margin: 32px auto 0;
-
     text-align: center;
 }
 
-.project-content {
-    width: 100%;
-}
+
 
 .project-content h3 {
-    max-width: 1000px;
-
-    margin-left: auto;
-    margin-right: auto;
-
     font-size: clamp(32px, 3.5vw, 52px);
     font-weight: 500;
     line-height: 1.05;
@@ -376,13 +375,11 @@ button {
 
 .project-content p {
     max-width: 760px;
-
     margin: 28px auto 0;
 
     font-size: 19px;
     line-height: 1.5;
     letter-spacing: -0.02em;
-
     opacity: 0.65;
 }
 
@@ -802,4 +799,185 @@ button {
     font-size: 13px;
     line-height: 1.4;
     opacity: 0.5;
+}
+@media (max-width: 768px) {
+
+    :root {
+        --side-padding: 16px;
+    }
+
+    .header {
+        padding-top: 16px;
+    }
+
+    .header .container {
+        min-height: 64px;
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .burger {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 11vw, 64px);
+    }
+
+    .hero p {
+        margin-top: 32px;
+        font-size: 16px;
+    }
+
+
+    /* PROJECTS */
+
+    .projects {
+        padding: 90px 0;
+    }
+
+    .projects-heading {
+        margin-bottom: 60px;
+    }
+
+    .projects-heading h2 {
+        font-size: clamp(40px, 10vw, 64px);
+    }
+
+    .projects-heading p {
+        margin-top: 24px;
+        font-size: 16px;
+    }
+
+    .projects-list {
+        gap: 80px;
+    }
+
+    .project-image {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .project-info {
+        margin-top: 24px;
+    }
+
+    .project-content h3 {
+        font-size: clamp(30px, 8vw, 48px);
+    }
+
+    .project-content p {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+
+    /* FURNITURE */
+
+    .furniture {
+        padding: 90px 0;
+    }
+
+    .furniture-heading h2 {
+        font-size: clamp(40px, 10vw, 64px);
+    }
+
+    .furniture-heading p {
+        margin-top: 24px;
+        font-size: 16px;
+    }
+
+    .furniture-slider {
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+        gap: 12px;
+        margin-top: 60px;
+    }
+
+    .furniture-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .furniture-slide {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .furniture-content h3 {
+        font-size: clamp(40px, 10vw, 64px);
+    }
+
+    .furniture-content p {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+
+    /* CONTACTS */
+
+    .contacts {
+        padding: 90px 0;
+    }
+
+    .contacts-content {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .contact-form h3,
+    .contacts-content > .section-heading h2 {
+        font-size: clamp(40px, 10vw, 64px);
+    }
+
+
+    /* INFORMATION */
+
+    .information {
+        padding: 90px 0;
+    }
+
+    .information-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .information-content > .section-heading h2 {
+        font-size: clamp(40px, 10vw, 64px);
+    }
+
+    .information-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 36px 0 24px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .footer-company {
+        align-items: flex-start;
+    }
+
 }
