@@ -132,3 +132,40 @@ menuClose.addEventListener("click", closeMenu);
 menuLinks.forEach(link => {
     link.addEventListener("click", closeMenu);
 });
+const contactForm = document.querySelector("#contact-form");
+
+contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    const data = {
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        comment: formData.get("comment"),
+        website: formData.get("website")
+    };
+
+    try {
+        const response = await fetch("https://lestim-api.onrender.com", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.detail || "Ошибка отправки");
+        }
+
+        alert(result.message);
+        contactForm.reset();
+
+    } catch (error) {
+        console.error(error);
+        alert("Не удалось отправить заявку. Попробуйте ещё раз.");
+    }
+});

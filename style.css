@@ -814,21 +814,25 @@ button {
 .contact-form button {
     margin-top: 44px;
     padding: 17px 26px;
-    border: 1px solid var(--black);
+
+    border: 1px solid var(--milk);
     background: transparent;
-    color: var(--black);
+    color: var(--milk);
+
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
+
     cursor: pointer;
+
     transition:
         background-color 0.2s ease,
         color 0.2s ease;
 }
 
 .contact-form button:hover {
-    background: var(--black);
-    color: var(--milk);
+    background: var(--milk);
+    color: var(--black);
 }
 
 
