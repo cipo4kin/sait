@@ -1,199 +1,100 @@
-const furniture = {
+const burger = document.querySelector(".burger");
+const menu = document.querySelector(".menu");
+const menuClose = document.querySelector(".menu-close");
+const menuLinks = document.querySelectorAll(".menu-nav a");
 
-    kitchens: [
-        "материал к сайту/фотки/кухни/4.jpeg",
-        "материал к сайту/фотки/кухни/9.jpeg",
-        "материал к сайту/фотки/кухни/10.jpeg",
-        "материал к сайту/фотки/кухни/13.jpeg"
-    ],
+function openMenu() {
+    menu.classList.add("active");
+    burger.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+}
+function closeMenu() {
+    menu.classList.remove("active");
+    burger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+}
+burger.addEventListener("click", openMenu);
+menuClose.addEventListener("click", closeMenu);
 
-    wardrobes: [
-        "материал к сайту/фотки/шкафы/2.jpeg",
-        "материал к сайту/фотки/шкафы/3.jpeg",
-        "материал к сайту/фотки/шкафы/8.jpeg",
-        "материал к сайту/фотки/шкафы/13.jpeg"
-        
-    
-    ],
+menuLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu)
 
-    tables: [
-        "материал к сайту/фотки/столы/1.jpeg",
-        "материал к сайту/фотки/столы/2.jpeg",
-        "материал к сайту/фотки/столы/4.jpeg",
-        "материал к сайту/фотки/столы/5.jpeg"
-    ],
-
-    beds: [
-       "материал к сайту/фотки/кровати/3.jpeg",
-       "материал к сайту/фотки/кровати/5.jpeg",
-       "материал к сайту/фотки/кровати/9.jpeg",
-       "материал к сайту/фотки/кровати/10.jpeg"
-       
-    
-
-    ]
-
-};
-const categoryBlocks = document.querySelectorAll(".furniture-category");
-
-
-categoryBlocks.forEach(block => {
-
-    const button = block.querySelector(".category-button");
-    const gallery = block.querySelector(".furniture-gallery");
-    const icon = block.querySelector(".category-icon");
-
-    const category = button.dataset.category;
-
-
-    button.addEventListener("click", () => {
-
-        const isOpen = block.classList.contains("open");
-
-
-        if (isOpen) {
-
-            block.classList.remove("open");
-
-            icon.textContent = "+";
-
-            gallery.innerHTML = "";
-
-            return;
-
-        }
-
-
-        block.classList.add("open");
-
-        icon.textContent = "−";
-
-
-        furniture[category].forEach(image => {
-
-            const img = document.createElement("img");
-
-            img.src = image;
-            img.alt = "Мебель производства ЛЕСЪТИМ";
-
-            gallery.appendChild(img);
-
-        });
-
-    });
-
-});
-
-
-const revealElements = document.querySelectorAll(
-    ".section-heading, .furniture-category, .project-item, .production, .contacts"
-);
-
-const revealObserver = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
-                revealObserver.unobserve(entry.target);
-
-            }
-
-        });
-
+})
+const furnitureData = [
+    {
+        title: "Кухни",
+        description: "Изготавливаем кухни под особенности пространства и задачи проекта.",
+        image: "материал к сайту/фотки/мебель/кухни/1.jpg",
+        alt: "Кухни на заказ",
+        link: "furniture/kitchens.html"
     },
     {
-        threshold: 0.12
+        title: "Шкафы",
+        description: "Изготавливаем шкафы и системы хранения под размеры и особенности помещения.",
+        image: "материал к сайту/фотки/мебель/шкафы/1.jpg",
+        alt: "Шкафы на заказ",
+        link: "furniture/waredrobes.html"
+    },
+    {
+        title: "Столы",
+        description: "Изготавливаем столы под интерьер, размеры и задачи пространства.",
+        image: "материал к сайту/фотки/мебель/столы/1.jpg",
+        alt: "Столы на заказ",
+        link: "furniture/tables.html"
+    },
+    {
+        title: "Кровати",
+        description: "Изготавливаем кровати под размеры помещения и особенности проекта.",
+        image: "материал к сайту/фотки/мебель/кровати/1.jpg",
+        alt: "Кровати на заказ",
+        link: "furniture/beds.html"
     }
-);
+];
+const furnitureImage = document.querySelector(".furniture-image img");
+const furnitureCounter = document.querySelector(".furniture-counter");
+const furnitureTitle = document.querySelector(".furniture-content h3");
+const furnitureDescription = document.querySelector(".furniture-content p");
+const furnitureLink = document.querySelector(".furniture-link");
+const furnitureSlide = document.querySelector(".furniture-slide");
+const furniturePrev = document.querySelector(".furniture-arrow-prev");
+const furnitureNext = document.querySelector(".furniture-arrow-next");
+let currentFurniture = 0;
+function updateFurniture() {
+    const furniture = furnitureData[currentFurniture];
 
+    furnitureSlide.classList.add("is-changing");
 
-revealElements.forEach(element => {
+    setTimeout(() => {
+        furnitureImage.src = furniture.image;
+        furnitureImage.alt = furniture.alt;
 
-    element.classList.add("reveal");
+        furnitureCounter.textContent =
+            `${String(currentFurniture + 1).padStart(2, "0")} / ${String(furnitureData.length).padStart(2, "0")}`;
 
-    revealObserver.observe(element);
+        furnitureTitle.textContent = furniture.title;
+        furnitureDescription.textContent = furniture.description;
+        furnitureLink.href = furniture.link;
 
-});
-const header = document.querySelector(".header");
-const burger = document.querySelector(".burger");
-const navLinks = document.querySelectorAll(".nav a");
+        furnitureSlide.classList.remove("is-changing");
+    }, 250);
+}
+function showPreviousFurniture() {
+    currentFurniture--;
 
-
-burger.addEventListener("click", () => {
-
-    const isOpen = header.classList.toggle("nav-open");
-
-    burger.setAttribute(
-        "aria-label",
-        isOpen ? "Закрыть меню" : "Открыть меню"
-    );
-
-});
-
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        header.classList.remove("nav-open");
-
-        burger.setAttribute(
-            "aria-label",
-            "Открыть меню"
-        );
-
-    });
-
-});
-
-
-const contactForm = document.querySelector("#contact-form");
-
-contactForm.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const formData = new FormData(contactForm);
-
-    const data = {
-        name: formData.get("name"),
-        phone: formData.get("phone"),
-        comment: formData.get("comment"),
-        website: formData.get("website")
-    };
-
-    const submitButton = contactForm.querySelector("button");
-
-    submitButton.textContent = "Отправляем...";
-    submitButton.disabled = true;
-
-    try {
-        const response = await fetch("https://lestim-api.onrender.com/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            window.location.href = "thanks.html";
-        } else {
-            submitButton.textContent = "Рассчитать стоимость";
-            submitButton.disabled = false;
-
-            alert("Не удалось отправить заявку");
-        }
-
-    } catch (error) {
-        console.error(error);
-
-        submitButton.textContent = "Рассчитать стоимость";
-        submitButton.disabled = false;
-
-        alert("Произошла ошибка при отправке заявки");
+    if (currentFurniture < 0) {
+        currentFurniture = furnitureData.length - 1;
     }
-});
+    updateFurniture();
+}
+function showNextFurniture() {
+    currentFurniture++;
+
+    if (currentFurniture >= furnitureData.length) {
+        currentFurniture = 0;
+    }
+
+    updateFurniture();
+}
+
+furniturePrev.addEventListener("click", showPreviousFurniture);
+furnitureNext.addEventListener("click", showNextFurniture);
