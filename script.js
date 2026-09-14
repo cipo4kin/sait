@@ -147,7 +147,7 @@ contactForm.addEventListener("submit", async (event) => {
     };
 
     try {
-        const response = await fetch("https://lestim-api.onrender.com", {
+        const response = await fetch("https://lestim-api.onrender.com/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
