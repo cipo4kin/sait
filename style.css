@@ -226,13 +226,23 @@ button {
     min-height: calc(100vh - 116px);
 
     display: flex;
-    align-items: center;
+    align-items: stretch;
 
-    padding: 80px 0 100px;
+    padding: 80px 24px 48px;
 }
 
 
 .hero-content {
+    width: 100%;
+    min-height: calc(100vh - 244px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.hero-main {
     width: 100%;
 }
 
@@ -247,6 +257,7 @@ button {
     text-transform: uppercase;
 }
 
+
 .hero p {
     max-width: 620px;
     margin-top: 48px;
@@ -255,6 +266,85 @@ button {
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: -0.015em;
+}
+
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 32px;
+    padding: 16px 24px;
+
+    border: 1px solid var(--milk);
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.main-button:hover {
+    background: var(--milk);
+    color: var(--black);
+}
+
+
+.hero-advantages {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+
+    margin-top: 100px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(241, 239, 232, 0.3);
+}
+
+
+.hero-advantage {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 20px;
+}
+
+
+.hero-advantage-number {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+
+    opacity: 0.45;
+}
+
+
+.hero-advantage h2 {
+    max-width: 300px;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+
+    text-transform: uppercase;
+}
+
+
+.hero-advantage p {
+    max-width: 300px;
+    margin-top: 12px;
+
+    font-size: 14px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+
+    opacity: 0.5;
 }
 
 
@@ -482,28 +572,21 @@ button {
 }
 
 
-/* ОБЩАЯ ФОТОГРАФИЯ */
+
 
 .furniture-card-image {
     overflow: hidden;
-    background: #151515;
+    padding: 16px;
+    border: 1px solid rgba(10, 10, 10, 0.22);
+    background: var(--milk);
 }
 
 .furniture-card-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
-
-    object-fit: cover;
-
-    transform: scale(1);
-
-    transition: transform 0.7s ease;
 }
 
-.furniture-card:hover .furniture-card-image img {
-    transform: scale(1.035);
-}
 
 
 
@@ -578,8 +661,8 @@ button {
 
 .furniture-card:nth-child(1) .furniture-card-image {
     order: 2;
-    width: 100%;
-    aspect-ratio: 16 / 9;
+    width: 50%;
+    margin: 0 auto;
 }
 
 
@@ -587,13 +670,13 @@ button {
 
 .furniture-card:nth-child(2) {
     display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
-    gap: 72px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+    gap: 48px;
     align-items: center;
 }
 
 .furniture-card:nth-child(2) .furniture-card-image {
-    aspect-ratio: 16 / 10;
+    width: 75%;
 }
 
 .furniture-card:nth-child(2) .furniture-card-content {
@@ -601,11 +684,10 @@ button {
 }
 
 
-
 .furniture-card:nth-child(3) {
     display: grid;
-    grid-template-columns: minmax(300px, 0.55fr) minmax(0, 1.45fr);
-    gap: 72px;
+    grid-template-columns: minmax(260px, 0.35fr) minmax(0, 1.65fr);
+    gap: 64px;
     align-items: center;
 }
 
@@ -997,4 +1079,376 @@ button {
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: -0.015em;
+}
+@media (max-width: 768px) {
+
+    :root {
+        --side-padding: 16px;
+    }
+
+
+    body {
+        font-size: 16px;
+    }
+
+
+    /* HEADER */
+
+    .header {
+        padding-top: 16px;
+    }
+
+    .header .container {
+        min-height: 60px;
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .burger {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    /* MENU */
+
+    .menu-inner {
+        width: calc(100% - 32px);
+        padding: 16px 0 40px;
+    }
+
+    .menu-header {
+        min-height: 60px;
+        padding: 0 16px;
+    }
+
+    .menu-nav {
+        margin-top: 48px;
+    }
+
+    .menu-nav a {
+        padding: 14px 0;
+        font-size: clamp(32px, 10vw, 48px);
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+        padding: 56px 16px 40px;
+    }
+
+    .hero-content {
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: clamp(44px, 12vw, 64px);
+        line-height: 0.94;
+    }
+
+    .hero p {
+        max-width: 100%;
+        margin-top: 28px;
+        font-size: 16px;
+    }
+
+    .main-button {
+        margin-top: 24px;
+        padding: 14px 20px;
+    }
+
+    .hero-advantages {
+        grid-template-columns: 1fr;
+        gap: 32px;
+
+        margin-top: 72px;
+        padding-top: 20px;
+    }
+
+    .hero-advantage {
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .hero-advantage h2 {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .hero-advantage p {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+
+    /* PROJECTS */
+
+    .projects {
+        padding: 100px 0;
+    }
+
+    .projects-heading {
+        margin-bottom: 56px;
+    }
+
+    .projects-heading h2 {
+        font-size: clamp(42px, 11vw, 64px);
+    }
+
+    .projects-list {
+        gap: 80px;
+    }
+
+    .project-image {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .project-image-inner {
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-info {
+        margin-top: 24px;
+    }
+
+    .project-content h3 {
+        font-size: clamp(30px, 8vw, 44px);
+    }
+
+    .project-content p {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .project-date {
+        margin-top: 20px;
+    }
+
+    .project-controls {
+        margin-top: 32px;
+    }
+
+    .project-arrow {
+        width: 46px;
+        height: 46px;
+    }
+
+
+    /* FURNITURE */
+
+    .furniture {
+        padding: 100px 0;
+    }
+
+    .furniture-heading {
+        margin-bottom: 64px;
+    }
+
+    .furniture-heading h2 {
+        font-size: clamp(46px, 12vw, 68px);
+    }
+
+    .furniture-heading p {
+        margin-top: 24px;
+        font-size: 16px;
+    }
+
+    .furniture-list {
+        gap: 100px;
+    }
+
+
+    /* KITCHEN */
+
+    .furniture-card:nth-child(1) .furniture-card-content {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .furniture-card:nth-child(1) .furniture-card-image {
+        width: 80%;
+    }
+
+
+    /* WARDROBES */
+
+    .furniture-card:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: stretch;
+    }
+
+    .furniture-card:nth-child(2) .furniture-card-image {
+        width: 80%;
+    }
+
+    .furniture-card:nth-child(2) .furniture-card-content {
+        width: 100%;
+    }
+
+
+    /* TABLES */
+
+    .furniture-card:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: stretch;
+    }
+
+    .furniture-card:nth-child(3) .furniture-card-image {
+        width: 100%;
+        aspect-ratio: auto;
+    }
+
+    .furniture-card:nth-child(3) .furniture-card-content {
+        width: 100%;
+        order: 2;
+    }
+
+
+    /* BEDS */
+
+    .furniture-card:nth-child(4) .furniture-card-image {
+        width: 100%;
+        aspect-ratio: auto;
+    }
+
+    .furniture-card:nth-child(4) .furniture-card-content {
+        width: 100%;
+        margin-top: 32px;
+    }
+
+
+    .furniture-card-content h3 {
+        font-size: clamp(42px, 11vw, 64px);
+    }
+
+    .furniture-card-content h4 {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    .furniture-card-content p {
+        margin-top: 16px;
+        font-size: 15px;
+    }
+
+    .furniture-card-content a {
+        margin-top: 28px;
+    }
+
+
+    /* PRODUCTION */
+
+    .production {
+        padding: 100px 0;
+    }
+
+    .production-header {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .production-title h2 {
+        font-size: clamp(44px, 11vw, 64px);
+    }
+
+    .production-lead {
+        max-width: 100%;
+    }
+
+    .production-lead p {
+        font-size: 16px;
+    }
+
+    .production-placeholder {
+        min-height: 320px;
+        margin-top: 56px;
+    }
+
+
+    /* CONTACTS */
+
+    .contacts {
+        padding: 100px 0;
+    }
+
+    .contacts-content {
+        grid-template-columns: 1fr;
+        gap: 64px;
+    }
+
+    .contacts-intro {
+        max-width: 100%;
+    }
+
+    .contacts-intro h2 {
+        font-size: clamp(48px, 12vw, 68px);
+    }
+
+    .contacts-intro p {
+        margin-top: 28px;
+        font-size: 16px;
+    }
+
+    .contact-form {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+
+    /* INFORMATION */
+
+    .information {
+        padding: 90px 0;
+    }
+
+    .information-content {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    .information-content > .section-heading h2 {
+        font-size: clamp(44px, 11vw, 64px);
+    }
+
+    .information-content > .section-heading p {
+        margin-top: 24px;
+        font-size: 16px;
+    }
+
+    .information-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .information-item p,
+    .information-item a {
+        font-size: 16px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 40px 0 24px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .footer-company {
+        align-items: flex-start;
+    }
 }

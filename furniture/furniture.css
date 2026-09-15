@@ -1,0 +1,206 @@
+.category-hero {
+    padding: 120px 0 100px;
+    background: var(--milk);
+    color: var(--black);
+}
+
+.category-label,
+.gallery-number {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.45;
+}
+
+.category-hero h1 {
+    margin-top: 32px;
+    font-family: "Archivo", sans-serif;
+    font-size: clamp(80px, 14vw, 220px);
+    font-weight: 500;
+    line-height: 0.82;
+    letter-spacing: -0.07em;
+}
+
+.category-hero p {
+    max-width: 520px;
+    margin-top: 48px;
+    font-size: 19px;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    opacity: 0.6;
+}
+
+
+
+
+.category-gallery {
+    padding: 80px 0 160px;
+    background: var(--milk);
+    color: var(--black);
+}
+
+.category-gallery .container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+
+
+.gallery-large {
+    width: 100%;
+}
+
+.gallery-large img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.gallery-large-wide img {
+    aspect-ratio: 16 / 8;
+}
+
+
+/* Небольшой сдвиг для разнообразия */
+
+.gallery-large-offset {
+    width: 92%;
+    margin-left: auto;
+}
+
+
+
+
+.gallery-intro,
+.gallery-detail {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 60px;
+
+    max-width: 1000px;
+    margin: 140px auto;
+}
+
+.gallery-intro h2,
+.gallery-detail h2 {
+    max-width: 760px;
+
+    font-family: "Archivo", sans-serif;
+    font-size: clamp(44px, 5.5vw, 78px);
+    font-weight: 500;
+    line-height: 0.93;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+}
+
+.gallery-intro p,
+.gallery-detail p {
+    max-width: 520px;
+    margin-top: 32px;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    opacity: 0.6;
+}
+
+
+
+
+.gallery-grid {
+    display: grid;
+    gap: 28px;
+}
+
+.gallery-grid-half {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 80px;
+}
+
+.gallery-grid-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 80px;
+}
+
+.gallery-grid-last {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 88%;
+    margin: 80px auto 0;
+}
+
+.gallery-image {
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+
+
+
+.gallery-large + .gallery-intro {
+    margin-top: 140px;
+}
+
+.gallery-grid + .gallery-large {
+    margin-top: 120px;
+}
+
+.gallery-large + .gallery-grid {
+    margin-top: 120px;
+}
+
+.gallery-detail + .gallery-large {
+    margin-top: 40px;
+}
+
+
+
+
+.category-cta {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 48px;
+
+    margin-top: 180px;
+    padding-top: 32px;
+
+    border-top: 1px solid rgba(10, 10, 10, 0.25);
+}
+
+.category-cta h2 {
+    font-family: "Archivo", sans-serif;
+    font-size: clamp(48px, 6vw, 88px);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+}
+
+.category-cta a {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--black);
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+
+    transition: opacity 0.2s ease;
+}
+
+.category-cta a:hover {
+    opacity: 0.5;
+}
